@@ -1,20 +1,21 @@
 extends ../layout
 block content
-	h1 All Teams
-	if(typeof(teams) !== "undefined" && teams !== null && teams.length > 0)
-		table
-			tr
-				th Id
-				th Name
-				th Type
-				th Created
-			each team in teams
+	.span12
+		h1 All Teams
+		if(typeof(teams) !== "undefined" && teams !== null && teams.length > 0)
+			table
 				tr
-					td #{team.Id}
-					td #{team.Name}
-					td #{team.Type}
-					td #{team.Created}
-	else
-		.well
-			p There are no teams in the database
+					th Name
+					th Type
+					th Created
+				each team in teams
+					tr
+						td 
+							a(href='/teams/'+ team.Id, title=team.Name)
+								strong= team.Name
+						td #{team.Type}
+						td #{team.Created}
+		else
+			.well
+				p There are no teams in the database
 
