@@ -3,10 +3,10 @@ block content
 	.span12
 		h1 Add New Team
 		form(action='/teams/create', method='post', class='.form-horizontal')
-			 if ('undefined' !== typeof errors && errors.length)
-        		ul#errors
-            		- each error in errors
-                		li.error= error
+			if ('undefined' !== typeof errors && errors.length)
+				ul#errors
+					- each error in errors
+						li.error= error
 			.control-group
 				label(for='team[name]', class='.control-label')
 					Name
