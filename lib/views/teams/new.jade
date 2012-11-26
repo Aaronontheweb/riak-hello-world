@@ -1,0 +1,23 @@
+extends ../layout
+block content
+	.span12
+		h1 Add New Team
+		form(action='/teams/create', method='post', class='.form-horizontal')
+			.control-group
+				label(for='teamName', class='.control-label')
+					Name
+				.controls
+					input(type='text', id='teamName', name='teamName', placeholder='Team Name')
+			.control-group
+				label(for='teamType', class='.control-label')
+					Team Type
+				.controls
+					select(id='teamType', name='teamType')
+  						option(value="Football") Football
+  						option(value="Soccer") Soccer
+  						option(value="Basketball") Basketball
+  						option(value="Baseball") Baseball
+  						option(value="Hockey") Hockey
+			,control-group
+				.controls
+					button(type="submit", class="btn") Add Team
